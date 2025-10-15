@@ -1,0 +1,40 @@
+## Carto example customizations values
+
+appConfigValues:
+  selfHostedDomain: "test-domain.carto.io"
+  storageProvider: "gcp"
+  workspaceExportsBucket: test-export-bucket
+  workspaceImportsBucket: test-assets-bucket
+  workspaceImportsPublic: true
+  workspaceThumbnailsBucket: test-assets-bucket
+  workspaceThumbnailsPublic: true
+  thumbnailsBucketExternalURL: https://storage.googleapis.com/test-assets-bucket/ 
+  googleCloudStorageProjectId: carto-gcp-sh-test-project
+internalPostgresql:
+  # Disable the internal Postgres
+  enabled: false
+# start external postgres
+externalPostgresql:
+  host: "test-postgres-host/exteral-ip"
+  user: "carto"
+  existingSecret: "carto-postgresql"
+  existingSecretPasswordKey: "user-password"
+  database: "carto"
+  port: "5432"
+# end external postgres
+# start router
+router:
+  service:
+    type: LoadBalancer
+# end router
+# start tls
+# for tls end to end -
+# - if you setup tls termination at the router - you can skip this
+tlsCerts:
+# end tls
+  httpsEnabled: true
+  autoGenerate: false
+  existingSecret:
+    name: "carto-io-tls"
+    keyKey: "tls.key"
+    certKey: "tls.crt"
