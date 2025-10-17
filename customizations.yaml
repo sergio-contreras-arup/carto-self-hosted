@@ -13,13 +13,12 @@ appConfigValues:
 internalPostgresql:
   # Disable the internal Postgres
   enabled: false
-# start external postgres
 externalPostgresql:
-  host: "3e90ad467456.278zr3pg3yn8v.europe-southwest1.sql.goog."
-  user: "carto"
+  host: "10.248.78.6"
+  user: "carto_worskpace_admin"
   existingSecret: "carto-postgresql"
-  existingSecretPasswordKey: "carto"
-  database: "carto"
+  existingSecretPasswordKey: "user-password"
+  database: "carto_worskpace"
   port: "5432"
 # end external postgres
 # start router
