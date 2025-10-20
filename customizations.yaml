@@ -15,10 +15,10 @@ internalPostgresql:
   enabled: false
 externalPostgresql:
   host: "10.248.78.6"
-  user: "carto_worskpace_admin"
+  user: "carto_workspace_admin"
   existingSecret: "carto-postgresql"
   existingSecretPasswordKey: "user-password"
-  database: "carto_worskpace"
+  database: "carto_workspace"
   port: "5432"
 # end external postgres
 # start router
